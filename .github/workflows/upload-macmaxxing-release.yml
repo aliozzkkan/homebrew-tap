@@ -1,0 +1,34 @@
+name: Upload verified MacMaxxing release asset
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Existing release tag (vX.Y.Z)
+        required: true
+        type: string
+      sha256:
+        description: Expected SHA-256 of the notarized DMG
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      RELEASE_TAG: ${{ inputs.version }}
+      EXPECTED_SHA256: ${{ inputs.sha256 }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Download and verify existing notarized distribution
+        run: |
+          [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          [[ "$EXPECTED_SHA256" =~ ^[0-9a-f]{64}$ ]]
+          curl --fail --location --retry 2 --max-time 120 https://aliozzkkan.github.io/MacMaxxing/MacMaxxing.dmg --output MacMaxxing.dmg
+          printf '%s  MacMaxxing.dmg\n' "$EXPECTED_SHA256" | sha256sum --check --strict
+      - name: Upload without replacing existing assets
+        run: gh release upload "$RELEASE_TAG" MacMaxxing.dmg --repo "$GITHUB_REPOSITORY"
