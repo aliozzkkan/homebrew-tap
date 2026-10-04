@@ -4,6 +4,8 @@
 
 Apple Silicon ve macOS 14 veya üzeri için özelleştirilebilir widgetlar ve Mac araçları.
 
+Güncel kararlı sürüm: **1.1.5**. Apple noter onaylı paket, ekran görüntüsü silme ve erişim kurtarma düzeltmelerini içerir.
+
 ### Kurulum
 
 ```sh
