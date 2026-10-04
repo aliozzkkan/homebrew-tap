@@ -1,6 +1,6 @@
 cask "macmaxxing" do
-  version "1.1.5"
-  sha256 "cf15eb5ae68c1e4ef00565361bc9de67166fad73497ee71bb6338aefbb66f3b3"
+  version "1.1.6"
+  sha256 "97c24ddfd830de7b1a36a48bd65d90004ba972b4bc25e227c10e3bcf8752628b"
 
   url "https://github.com/aliozzkkan/homebrew-tap/releases/download/v#{version}/MacMaxxing.dmg"
   name "MacMaxxing"
