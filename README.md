@@ -4,7 +4,7 @@
 
 Apple Silicon ve macOS 14 veya üzeri için özelleştirilebilir widgetlar ve Mac araçları.
 
-Güncel kararlı sürüm: **1.1.6**. Apple noter onaylı paket, widget detaylarını ve kart düğmelerini engelleyen tıklama düzeltmesini içerir.
+Güncel kararlı sürüm: **1.1.7**. Apple noter onaylı paket; dashboard açıkken medya kapsülünü gizler, Hide Notch için menü çubuğu arka planı uyarısı ekler ve güvenlik sertleştirmeleri içerir.
 
 ### Kurulum
 
